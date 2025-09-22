@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Four-column Articles with Themes</title>
+  <link rel="stylesheet" href="articles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Latest Articles</h1>
+      <small>Click a button to change article + page theme</small>
+    </div>
+
+    <div class="grid">
+      <article class="article-card" data-theme="theme1">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.OlN-ZJ16KWdxaIiUIPWlNAHaHa?pid=Api&P=0&h=180" alt="AI Robot">
+        <h2>AI Robot</h2>
+        <p>A futuristic digital illustration of a humanoid figure with glowing circuits and the word “AI/HD” on its forehead, symbolizing artificial intelligence and technology.</p>
+        <div class="card-footer">
+          <span>Author: Kishore</span>
+          <button class="toggle-btn">Apply Theme</button>
+        </div>
+      </article>
+
+      <article class="article-card" data-theme="theme2">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.eVi8N-Tj3e5_kyOLJ3CZ4QAAAA?pid=Api&P=0&h=180" alt="3D Purple Cube">
+        <h2>3D Purple Cube</h2>
+        <p>A 3D purple cube with large question marks on its sides, representing mystery, curiosity, or unknown possibilities in a cosmic background.</p>
+        <div class="card-footer">
+          <span>Author: Kishore</span>
+          <button class="toggle-btn">Apply Theme</button>
+        </div>
+      </article>
+
+      <article class="article-card" data-theme="theme3">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.yH2aFdwg6e8oyVGhceTs5gHaD5?pid=Api&P=0&h=180" alt="News Article">
+        <h2>News Article</h2>
+        <p>A creative cartoon-style illustration of a newspaper with the words “News Article” in bold, along with related objects like a notebook and camera, symbolizing journalism and reporting.</p>
+        <div class="card-footer">
+          <span>Author: Kishore</span>
+          <button class="toggle-btn">Apply Theme</button>
+        </div>
+      </article>
+
+      <article class="article-card" data-theme="theme4">
+        <img src="https://tse4.mm.bing.net/th?id=OIF.aYXafHopiE0QDf%2bTigoCVQ&pid=Api&P=0&h=180" alt="Strawberries">
+        <h2>Strawberries</h2>
+        <p>Strawberries are bright red, juicy, and sweet fruits loved worldwide for their refreshing taste. They are rich in vitamin C, antioxidants, and fiber, making them both delicious and healthy.</p>
+        <div class="card-footer">
+          <span>Author: Kishore</span>
+          <button class="toggle-btn">Apply Theme</button>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <script>
+    // Handle theme switching
+    document.addEventListener('click', function(e) {
+      const btn = e.target.closest('.toggle-btn');
+      if (!btn) return;
+
+      const article = btn.closest('.article-card');
+      const theme = article.dataset.theme;
+
+      // Remove old theme classes from body and articles
+      document.body.classList.remove('theme1','theme2','theme3','theme4');
+      document.querySelectorAll('.article-card').forEach(card => {
+        card.classList.remove('active');
+      });
+
+      // Apply new theme to body and clicked article
+      document.body.classList.add(theme);
+      article.classList.add('active');
+    });
+  </script>
+</body>
+</html>
