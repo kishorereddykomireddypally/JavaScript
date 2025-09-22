@@ -5,3 +5,6 @@ const c = 77;
 console.log("value b is $(b)");
 console.log("value c is $(c)");
 console.log(a);
+
+a = 7077;
+console.log(typeof a);
